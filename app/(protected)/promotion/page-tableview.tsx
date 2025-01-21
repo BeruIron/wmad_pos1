@@ -21,6 +21,9 @@ interface Props {
   data: PaginationData<PromotionModel>;
 }
 
+export const PageTableView: React.FC<Props> = ({ title, data }) => {
+  const [paginatedData, setPaginatedData] = useState(data);
+  const router = useRouter();
 function useDebounce(value: string, delay: number) {
   const [debouncedValue, setDebouncedValue] = useState(value);
 
@@ -72,6 +75,7 @@ export const PageTableView: React.FC<Props> = ({ title, data }) => {
       <h1 className="text-3xl font-bold">{title}</h1>
 
       <div className="flex justify-between items-center">
+      
         <Input
           className="max-w-sm"
           placeholder="Search products..."
@@ -115,7 +119,7 @@ export const PageTableView: React.FC<Props> = ({ title, data }) => {
                 <TableCell>
                   {item.discountPercentage !== undefined && item.discountPercentage !== null
                     ? `${Number(item.discountPercentage).toFixed(2)}%`
-                    : "N/A"}
+                    : 'N/A'}
                 </TableCell>
               </TableRow>
             ))}

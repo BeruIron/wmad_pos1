@@ -14,3 +14,4 @@ COPY . .
 CMD [ "sh","-c","npm run db:generate && npm run dev"]
 RUN npm run db:generate && npm run build
 
+CMD ["npm", "run", "start"]
