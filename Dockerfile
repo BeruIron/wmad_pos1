@@ -11,8 +11,7 @@ RUN npm install --force
 
 COPY . .
 
-# Run database generation and build the Next.js app
+CMD [ "sh","-c","npm run db:generate && npm run dev"]
 RUN npm run db:generate && npm run build
 
-# Start the Next.js applicationg
 CMD ["npm", "run", "start"]
