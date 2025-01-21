@@ -21,9 +21,10 @@ interface Props {
   data: PaginationData<PromotionModel>;
 }
 
-export const PageTableView: React.FC<Props> = ({ title, data }) => {
-  const [paginatedData, setPaginatedData] = useState(data);
-  const router = useRouter();
+// export const PageTableView: React.FC<Props> = ({ title, data }) => {
+//   const [paginatedData, setPaginatedData] = useState(data);
+//   const router = useRouter();
+
 function useDebounce(value: string, delay: number) {
   const [debouncedValue, setDebouncedValue] = useState(value);
 
